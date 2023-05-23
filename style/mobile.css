@@ -1,0 +1,39 @@
+@media (min-width: 2559px){
+    body{
+        margin-right: 700px;
+        font-size: 45px;
+    }
+    #add, #tarefas button{
+        font-size: 25px;
+    }
+    #tarefas{
+        width: fit-content;
+    }
+    
+}
+
+@media(max-width:1024px){
+    body{
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 426px){
+    body{
+        background-image: url(../img/back_dois.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 321px){
+    body{
+        background-size: cover;
+        height: 100vh;
+    }
+}

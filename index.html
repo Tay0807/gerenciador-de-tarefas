@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/mobile.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="sessao">
+        <h1>Tarefas</h1>
+        <div id="tarefas">
+            <form action="" id="form">
+                <input type="text" placeholder="Adicionar tarefa" id="add">
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="todos">
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+
+        //adicionar uma tarefa
+        var fomulario = document.getElementById("form")
+        var bnt = document.getElementsByClassName("buton")
+
+        var id = 0
+
+        fomulario.addEventListener('submit', function(event){
+            event.preventDefault()
+            var atividade = document.getElementById("add")
+            var valor = atividade.value 
+            var todos = document.getElementById("todos")
+            todos.innerHTML += "<div class='item' id='item"+ id +"'> <input type='checkbox' class='check'  name='"+ valor +"'> <label for='"+ valor +"'>" + valor +"</label> <button onclick='deletar("+ id +")' type='button' class='buton'>x</button></div> "
+            var item = document.getElementsByClassName('item')
+
+            //percorre todos os elementos que tem o checkbox
+            for(var i = 0; i < item.length; i++) {
+                var itemExpecifiico = item[i]
+                itemExpecifiico.addEventListener('click', function(){
+
+                    //verifica se ja foi checado
+                    if (this.classList.contains("concluida")){
+                        this.classList.remove('concluida')
+                    } else {
+                        this.classList.add('concluida')
+                    }
+                })
+            }
+
+            id = id + 1;
+        })
+
+        //excluir tarefas
+
+       function deletar(idDiv){
+        var div = document.getElementById("item"+idDiv)
+        div.style.display = 'none'
+       }
+
+
+
+      
+
+        
+        
+        
+    </script>
+</body>
+</html>
